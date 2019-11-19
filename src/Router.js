@@ -1,18 +1,24 @@
 //react complements
 import React from 'react';
-import { Switch } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 //loading the controllers
-import PostController from './controllers/PostController';
-import HomeController from './controllers/HomeController';
+//import PostController from './controllers/PostController';
+//import HomeController from './controllers/HomeController';
+
+import ContributorsByPostId from './views/post/ContributorsByPostId';
+import index from './views/home/Index';
 
 function Router() {
   return (
     <Switch>
-        {/* all controllers views are loaded here: Home  */}
-        <HomeController/>
-        {/* all controllers views are loaded here: Post  */}
-        <PostController/>
+        {/* <HomeController />
+        <PostController/> */}
+
+        <Route path="/" exact component={index} />
+
+        <Route path="/Post/ContributorsByPostId/:id" exact component={ContributorsByPostId} />
+
     </Switch>
   );
 }
