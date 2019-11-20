@@ -27,19 +27,19 @@ class Index extends React.Component {
         return;
       }
   
-      axios.get(`https://api.github.com/search/repositories?q=${e.target.value}&order=desc`)
+      axios.get(`https://api.github.com/search/repositories?q=${e.target.value}&order=desc&per_page=6`)
       .then(function ({ data }) {
         // handle success
-        //console.log(data);
-        _this.setState({data: data.items.slice(0,6)});
-      })
+        console.log(data.items);
+        _this.setState({data: data.items});
+      });
   
     }
   }
 
   render() {
 
-    const Da = this.state.data.map(obj=> <CardInfo key={obj.id} title={obj.full_name} body={obj.description} language={obj.language} start_count={obj.stargazers_count} open_issues={obj.open_issues} />)
+    const Da = this.state.data.map(obj=> <CardInfo key={obj.id} data={obj} />)
 
     return (
       <div className="row">
@@ -61,8 +61,7 @@ class Index extends React.Component {
           <div className="row">
 
               {Da}
-
-              {/* <CardInfo title="hola" /> */}
+              
           </div>
 
         </div>

@@ -17,7 +17,7 @@ function Router() {
 
         <Route path="/" exact component={index} />
 
-        <Route path="/Post/ContributorsByPostId/:id" exact component={ContributorsByPostId} />
+        <Route path="/Post/ContributorsByPostId/:owner/:repo" exact component={ContributorsByPostId} />
 
     </Switch>
   );
