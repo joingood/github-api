@@ -23,4 +23,4 @@ The application will open automatically and ready to try it!
 
 ### Youtube link for the documentation of the operation
 
-https://www.youtube.com/watch?v=Gi_f_lWvthI&feature=youtu.be
+https://www.youtube.com/watch?v=GPUWewcm-oA&feature=youtu.be
