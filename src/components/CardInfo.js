@@ -1,7 +1,11 @@
-import React from 'react';
-import '../access/css/conponents/CardInfo.css';
+/*
+    This component is responsible for returning the view of the repositories information, making it maintainable
+*/
 
-import { Link } from "react-router-dom";
+import React from 'react'; //react
+import '../access/css/conponents/CardInfo.css'; //Load css
+
+import { Link } from "react-router-dom"; //load link for redirect
 
 function Index(props) {
   return (

@@ -1,23 +1,20 @@
 import React from 'react';
+import axios from 'axios';//library to make http requests
 
-//Complements
-import axios from 'axios';
+import '../../access/css/views/home/index.css'; //load css of this component
 
-import '../../access/css/views/home/index.css';
-
-//
-import CardInfo from '../../components/CardInfo';
+import CardInfo from '../../components/CardInfo'; //loading the view component
 
 
 class Index extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { data: []};
+    this.state = { data: [], searching: false};
 
     this.handleChange = this.handleChange.bind(this);
 
   }
-
+  //This function is responsible for triggering an event by pressing a key. is filtered to do the action when entering and doing the search
   handleChange(e){
     const _this = this;
     //return;
@@ -26,12 +23,12 @@ class Index extends React.Component {
       if(e.target.value.length === 0){
         return;
       }
-  
+
+      _this.setState({searching: true});
       axios.get(`https://api.github.com/search/repositories?q=${e.target.value}&order=desc&per_page=6`)
       .then(function ({ data }) {
         // handle success
-        console.log(data.items);
-        _this.setState({data: data.items});
+        _this.setState({data: data.items, searching: false});
       });
   
     }
@@ -53,7 +50,7 @@ class Index extends React.Component {
         </div>
 
         <div className="col s12">
-          <p className="p-msj-found"> {this.state.data.length} RESULTS FOUND</p>
+          <p className="p-msj-found"> { this.state.searching ? "Searching..." : (this.state.data.length +" RESULTS FOUND") } </p>
         </div>
 
         <div className="col s12">
@@ -61,7 +58,7 @@ class Index extends React.Component {
           <div className="row">
 
               {Da}
-              
+
           </div>
 
         </div>

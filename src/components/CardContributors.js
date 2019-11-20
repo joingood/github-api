@@ -1,5 +1,8 @@
-import React from 'react';
+/*
+    This component is responsible for returning the view of the taxpayers, making it maintainable
+*/
 
+import React from 'react'; //React
 
 function CardContributors(props) {
   return (

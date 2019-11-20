@@ -2,10 +2,6 @@ import React from 'react';
 import './App.css';
 import Header from './partial/Header';
 
-// import index from './views/home/Index';
-// import ContributorsByPostId from './views/post/ContributorsByPostId';
-
-// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from './Router';
 

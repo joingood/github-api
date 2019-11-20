@@ -1,19 +1,18 @@
+/*
+  This function is responsible for managing the routes, having centralized routing
+ */
+
 //react complements
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-//loading the controllers
-//import PostController from './controllers/PostController';
-//import HomeController from './controllers/HomeController';
-
+//loading the views to show
 import ContributorsByPostId from './views/post/ContributorsByPostId';
 import index from './views/home/Index';
 
 function Router() {
   return (
     <Switch>
-        {/* <HomeController />
-        <PostController/> */}
 
         <Route path="/" exact component={index} />
 
